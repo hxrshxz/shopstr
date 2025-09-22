@@ -439,7 +439,7 @@ export default function ProductInvoiceCard({
     }
   };
 
-  const handleFiatPayment = async (convertedPrice: number, data: any) => {
+  const handleFiatPayment = async (convertedPrice: number, data: Record<string, unknown>) => {
     try {
       if (
         data.shippingName ||
@@ -450,21 +450,21 @@ export default function ProductInvoiceCard({
         data.shippingCountry
       ) {
         validatePaymentData(convertedPrice, {
-          Name: data.shippingName || "",
-          Address: data.shippingAddress || "",
-          Unit: data.shippingUnitNo || "",
-          City: data.shippingCity || "",
-          "Postal Code": data.shippingPostalCode || "",
-          "State/Province": data.shippingState || "",
-          Country: data.shippingCountry || "",
-          Required: data.additionalInfo || "",
+          Name: (data.shippingName as string) || "",
+          Address: (data.shippingAddress as string) || "",
+          Unit: (data.shippingUnitNo as string) || "",
+          City: (data.shippingCity as string) || "",
+          "Postal Code": (data.shippingPostalCode as string) || "",
+          "State/Province": (data.shippingState as string) || "",
+          Country: (data.shippingCountry as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else if (data.contact || data.contactType || data.contactInstructions) {
         validatePaymentData(convertedPrice, {
-          Contact: data.contact || "",
-          "Contact Type": data.contactType || "",
-          Instructions: data.contactInstructions || "",
-          Required: data.additionalInfo || "",
+          Contact: (data.contact as string) || "",
+          "Contact Type": (data.contactType as string) || "",
+          Instructions: (data.contactInstructions as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else {
         validatePaymentData(convertedPrice);
@@ -774,21 +774,21 @@ export default function ProductInvoiceCard({
         data.shippingCountry
       ) {
         validatePaymentData(convertedPrice, {
-          Name: data.shippingName || "",
-          Address: data.shippingAddress || "",
-          Unit: data.shippingUnitNo || "",
-          City: data.shippingCity || "",
-          "Postal Code": data.shippingPostalCode || "",
-          "State/Province": data.shippingState || "",
-          Country: data.shippingCountry || "",
-          Required: data.additionalInfo || "",
+          Name: (data.shippingName as string) || "",
+          Address: (data.shippingAddress as string) || "",
+          Unit: (data.shippingUnitNo as string) || "",
+          City: (data.shippingCity as string) || "",
+          "Postal Code": (data.shippingPostalCode as string) || "",
+          "State/Province": (data.shippingState as string) || "",
+          Country: (data.shippingCountry as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else if (data.contact || data.contactType || data.contactInstructions) {
         validatePaymentData(convertedPrice, {
-          Contact: data.contact || "",
-          "Contact Type": data.contactType || "",
-          Instructions: data.contactInstructions || "",
-          Required: data.additionalInfo || "",
+          Contact: (data.contact as string) || "",
+          "Contact Type": (data.contactType as string) || "",
+          Instructions: (data.contactInstructions as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else {
         validatePaymentData(convertedPrice);
@@ -1498,21 +1498,21 @@ export default function ProductInvoiceCard({
         data.shippingCountry
       ) {
         validatePaymentData(price, {
-          Name: data.shippingName || "",
-          Address: data.shippingAddress || "",
-          Unit: data.shippingUnitNo || "",
-          City: data.shippingCity || "",
-          "Postal Code": data.shippingPostalCode || "",
-          "State/Province": data.shippingState || "",
-          Country: data.shippingCountry || "",
-          Required: data.additionalInfo || "",
+          Name: (data.shippingName as string) || "",
+          Address: (data.shippingAddress as string) || "",
+          Unit: (data.shippingUnitNo as string) || "",
+          City: (data.shippingCity as string) || "",
+          "Postal Code": (data.shippingPostalCode as string) || "",
+          "State/Province": (data.shippingState as string) || "",
+          Country: (data.shippingCountry as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else if (data.contact || data.contactType || data.contactInstructions) {
         validatePaymentData(price, {
-          Contact: data.contact || "",
-          "Contact Type": data.contactType || "",
-          Instructions: data.contactInstructions || "",
-          Required: data.additionalInfo || "",
+          Contact: (data.contact as string) || "",
+          "Contact Type": (data.contactType as string) || "",
+          Instructions: (data.contactInstructions as string) || "",
+          Required: (data.additionalInfo as string) || "",
         });
       } else {
         validatePaymentData(price);
